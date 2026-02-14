@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harini ❤️ My Forever</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: white;
+    transition: 1s ease;
+}
+
+/* Card styles */
+.card {
+    width: 90%;
+    max-width: 700px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    border: 3px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Fire effect text */
+.fire-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: fire 1s infinite alternate;
+    text-shadow:
+        0 0 5px #ff0a0a,
+        0 0 10px #ff4b1f,
+        0 0 15px #ff8c00,
+        0 0 20px #fff200,
+        0 0 30px #ff8c00,
+        0 0 40px #ff4b1f,
+        0 0 50px #ff0a0a;
+}
+
+/* Headings & text */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Button */
+button {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    border: none;
+    background: white;
+    color: #1d2b64;
+    cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #f8cdda;
+    color: #1d2b64;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fire {
+    0% {
+        text-shadow:
+        0 0 5px #ff0a0a,
+        0 0 10px #ff4b1f,
+        0 0 15px #ff8c00,
+        0 0 20px #fff200,
+        0 0 30px #ff8c00,
+        0 0 40px #ff4b1f,
+        0 0 50px #ff0a0a;
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        text-shadow:
+        0 0 10px #ff1a1a,
+        0 0 15px #ff5b2f,
+        0 0 20px #ff9c00,
+        0 0 25px #fff700,
+        0 0 30px #ff9c00,
+        0 0 45px #ff5b2f,
+        0 0 55px #ff1a1a;
+        transform: translateY(-2px) rotate(-1deg);
+    }
+    50% {
+        text-shadow:
+        0 0 5px #ff2a2a,
+        0 0 12px #ff6b3f,
+        0 0 18px #ffac00,
+        0 0 22px #fff700,
+        0 0 28px #ffac00,
+        0 0 38px #ff6b3f,
+        0 0 48px #ff2a2a;
+        transform: translateY(1px) rotate(1deg);
+    }
+    75% {
+        text-shadow:
+        0 0 8px #ff0a0a,
+        0 0 14px #ff4b1f,
+        0 0 19px #ff8c00,
+        0 0 24px #fff200,
+        0 0 29px #ff8c00,
+        0 0 42px #ff4b1f,
+        0 0 52px #ff0a0a;
+        transform: translateY(-1px) rotate(0deg);
+    }
+    100% {
+        text-shadow:
+        0 0 5px #ff0a0a,
+        0 0 10px #ff4b1f,
+        0 0 15px #ff8c00,
+        0 0 20px #fff200,
+        0 0 30px #ff8c00,
+        0 0 40px #ff4b1f,
+        0 0 50px #ff0a0a;
+        transform: translateY(0) rotate(-1deg);
+    }
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255,255,255,0.7);
+    transform: rotate(45deg);
+    animation: float 8s infinite ease-in;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+}
+
+.heart::before { top: -7px; left: 0; }
+.heart::after { left: -7px; top: 0; }
+
+@keyframes float {
+    0% { bottom: -10px; opacity: 0;}
+    20% { opacity: 1;}
+    100% { bottom: 100%; opacity: 0;}
+}
+
+/* Popup effect for card */
+.card-popup {
+    transform: scale(0.7);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.card-popup.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    h1.fire-text {
+        font-size: 2rem;
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Floating hearts smaller */
+    .heart {
+        width: 10px;
+        height: 10px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+
+    h1.fire-text {
+        font-size: 1.5rem;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="indownloader.app_audio_0482288001769801788.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card card-popup show" id="content">
+    <h1 class="fire-text">Harini Selvaraj ❤️</h1>
+    <p>
+        From the moment you entered my life, everything became softer, brighter, and more meaningful.
+    </p>
+    <button onclick="nextPage()">Continue</button>
+</div>
+
+<script>
+let page = 1;
+const content = document.getElementById("content");
+const music = document.getElementById("bgMusic");
+
+function nextPage() {
+    music.play(); // auto music start
+    page++;
+
+    if(page === 2){
+        document.body.style.background = "linear-gradient(135deg, #42275a, #734b6d)";
+        content.classList.remove('show');
+        setTimeout(() => {
+            content.innerHTML = `
+            <h1 class="fire-text">Moments With You ✨</h1>
+            <p>
+            Every laugh, every smile, every small moment with you <br>
+            is a memory I treasure forever . ❤️
+            </p>
+            <button onclick="nextPage()">Next</button>
+            `;
+            content.classList.add('show');
+        }, 300);
+    }
+    else if(page === 3){
+        document.body.style.background = "linear-gradient(135deg, #0f2027, #2c5364)";
+        content.classList.remove('show');
+        setTimeout(() => {
+            content.innerHTML = `
+            <h1 class="fire-text">For My Heart 💌</h1>
+            <p>
+            "ROWDY, you are my sunrise,<br>
+            You are the calm in my chaos,<br>
+            Every moment with you is a story,<br>
+            Every heartbeat beats for you alone." ❤️
+            </p>
+            <button onclick="nextPage()">One More</button>
+            `;
+            content.classList.add('show');
+        }, 300);
+    }
+    else if(page === 4){
+        document.body.style.background = "linear-gradient(135deg, #f857a6, #ff5858)";
+        content.classList.remove('show');
+        setTimeout(() => {
+            content.innerHTML = `
+            <h1 class="fire-text">Forever With You 💖</h1>
+            <p>
+            You walked into my life
+Like a song I didn’t know I needed—
+Now every moment without you
+Feels incomplete.,<br>
+            You’re not just my Rowdy, Harini… you’re the calm my heart always searched for.<br>
+            You are my peace, my happiness, my forever.
+            </p>
+            <h2>❤️ I'll Always be Yours Imsha❤️</h2>
+            `;
+            content.classList.add('show');
+        }, 300);
+    }
+}
+
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
