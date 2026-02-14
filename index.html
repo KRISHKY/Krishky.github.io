@@ -79,7 +79,6 @@ button:hover {
     to { transform: translateY(-2px); }
 }
 
-/* Floating hearts */
 .heart {
     position: absolute;
     width: 12px;
@@ -125,7 +124,7 @@ button:hover {
 
 <!-- Background Music -->
 <audio id="bgMusic" loop preload="auto">
-    <source src="indownloader.app_audio_0482288001769801788.mp3" type="audio/mpeg">
+    <source src="indownloader.app_audio_0482288001769801788%201.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card" id="content">
@@ -141,14 +140,14 @@ let page = 1;
 const content = document.getElementById("content");
 const music = document.getElementById("bgMusic");
 
-// Start music safely from user click
 function startExperience() {
-    music.play();
+    music.play()
+        .then(() => console.log("Music playing"))
+        .catch(error => console.log("Play error:", error));
     nextPage();
 }
 
 function nextPage() {
-
     page++;
 
     if(page === 2){
@@ -191,7 +190,6 @@ function nextPage() {
     }
 }
 
-// Floating hearts
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
